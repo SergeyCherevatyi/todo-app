@@ -1,0 +1,10 @@
+@import "../../../../styles/index.scss";
+
+.todosContainer {
+  background-color: $dark;
+  @include font(20px);
+}
+
+.variableColor {
+  @include font(20px);
+}
