@@ -1,67 +1,82 @@
 import React, { useEffect, useState } from "react";
-import "@styles/index.scss";
+// import "@styles/";
+import { ITodo, Todo } from "../Todo";
 
-interface ITodo {
-  id: number;
-  text: string;
-  createAt: Date;
-  completed: boolean;
+interface ITodosProps {
+  todos: ITodo[];
 }
 
-const Todos = () => {
-  const [todos, setTodos] = useState<ITodo[] | undefined>([
-    {
-      id: 1,
-      text: "Test 001",
-      createAt: new Date(),
-      completed: false,
-    },
-  ]);
-
-  useEffect(() => {
-    setTodos((state) =>
-      state?.concat([
-        {
-          id: 2,
-          text: "Test 002",
-          createAt: new Date(),
-          completed: false,
-        },
-        {
-          id: 3,
-          text: "Test 003",
-          createAt: new Date(),
-          completed: false,
-        },
-      ]),
-    );
-
-    // setTodos([{
-    //   id: 1,
-    //   text: 'Test 001',
-    //   createAt: new Date(),
-    //   completed: false
-    // },
-    //   {
-    //     id: 2,
-    //     text: 'Test 002',
-    //     createAt: new Date(),
-    //     completed: false
-    //   }
-    // ])
-  }, []);
-
+const Todos = ({ todos }: ITodosProps) => {
   return (
     <>
-      {" "}
-      {todos?.map(({ text, id }) => (
-        <div className="test" key={id}>
-          {text}
-        </div>
+      {todos.map((todo) => (
+        <Todo key={todo.id} completed={todo.completed} text={todo.text} />
       ))}
     </>
   );
 };
+
+// interface ITodo {
+//   id: number;
+//   text: string;
+//   createAt: Date;
+//   completed: boolean;
+// }
+
+// const Todos = () => {
+//   const [todos, setTodos] = useState<ITodo[] | undefined>([
+//     {
+//       id: 1,
+//       text: "Test 001",
+//       createAt: new Date(),
+//       completed: false,
+//     },
+//   ]);
+//
+//   useEffect(() => {
+//     setTodos((state) =>
+//       state?.concat([
+//         {
+//           id: 2,
+//           text: "Test 002",
+//           createAt: new Date(),
+//           completed: false,
+//         },
+//         {
+//           id: 3,
+//           text: "Test 003",
+//           createAt: new Date(),
+//           completed: false,
+//         },
+//       ]),
+//     );
+//
+//     // setTodos([{
+//     //   id: 1,
+//     //   text: 'Test 001',
+//     //   createAt: new Date(),
+//     //   completed: false
+//     // },
+//     //   {
+//     //     id: 2,
+//     //     text: 'Test 002',
+//     //     createAt: new Date(),
+//     //     completed: false
+//     //   }
+//     // ])
+//   }, []);
+//
+//   return (
+//     <>
+//       {" "}
+//       {todos?.map(({ text, id }) => (
+//         <div className="test" key={id}>
+//           {text}
+//         </div>
+//       ))}
+//     </>
+//   );
+// };
 
 // interface ITodosState {
 //   todos: ITodo[];
