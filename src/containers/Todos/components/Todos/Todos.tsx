@@ -1,23 +1,20 @@
 import React, { useEffect, useState } from "react";
-import "@styles/index.scss";
-import {ITodo, Todo} from "../Todo";
+// import "@styles/";
+import { ITodo, Todo } from "../Todo";
 
 interface ITodosProps {
-  todos: ITodo[]
+  todos: ITodo[];
 }
 
-
-const Todos = ( { todos }: ITodosProps) => {
+const Todos = ({ todos }: ITodosProps) => {
   return (
     <>
-      { todos.map( todo => <Todo key={todo.id} completed={todo.completed} text={todo.text} />)}
+      {todos.map((todo) => (
+        <Todo key={todo.id} completed={todo.completed} text={todo.text} />
+      ))}
     </>
-  )
-
-}
-
-
-
+  );
+};
 
 // interface ITodo {
 //   id: number;

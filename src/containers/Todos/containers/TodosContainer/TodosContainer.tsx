@@ -1,18 +1,18 @@
 import React from "react";
 //import styles from './index.module.scss'
 import { Header, Footer, Filters, Todos } from "@containers/";
-import {ITodo} from "../../components/Todo";
+import { ITodo } from "../../components/Todo";
 
 interface IComponentProps {
   children?: React.ReactNode;
-  todos: ITodo[]
+  todos: ITodo[];
 }
 
-const TodosContainer = ( { todos }: IComponentProps) => {
+const TodosContainer = ({ todos }: IComponentProps) => {
   return (
     <div>
       <Header />
-      <Todos todos={ todos } />
+      <Todos todos={todos} />
       <Filters />
       <Footer />
     </div>

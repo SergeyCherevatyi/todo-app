@@ -5,17 +5,16 @@ export interface ITodo {
   text: string;
   createAt: Date;
   completed: boolean;
-  onClick?: () => void
+  onClick?: () => void;
 }
 
-
-const Todo = ( { id, completed, text }: Partial<ITodo> ) => {
+const Todo = ({ id, completed, text }: Partial<ITodo>) => {
   return (
-  <>
-    <input type="checkbox" checked={ completed } />
-    <span> { text} </span>
-  </>
-  )
-}
+    <>
+      <input type="checkbox" checked={completed} />
+      <span> {text} </span>
+    </>
+  );
+};
 
-export default Todo
+export default Todo;
